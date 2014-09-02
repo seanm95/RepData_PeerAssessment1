@@ -52,6 +52,20 @@ hist(stepsSumByDayDF$x, breaks=20, col="red", xlab="total number of steps taken 
 ```r
 stepsMean <- mean(stepsSumByDayDF$x, na.rm=TRUE)
 stepsMedian <- median(stepsSumByDayDF$x, na.rm=TRUE)
+
+stepsMean
+```
+
+```
+## [1] 10766
+```
+
+```r
+stepsMedian
+```
+
+```
+## [1] 10765
 ```
 
 The mean total number of steps taken each day is 10766.19  
@@ -80,6 +94,12 @@ plot( strptime(stepsAvgByIntervalTimeDF$intervalTime, format="%Y-%m-%d %H:%M:%S"
 
 ```r
 intervalTimeMaxAvgSteps <- strftime( stepsAvgByIntervalTimeDF[stepsAvgByIntervalTimeDF$x==max(stepsAvgByIntervalTimeDF$x),"intervalTime"], format="%H:%M")
+
+intervalTimeMaxAvgSteps
+```
+
+```
+## [1] "08:35"
 ```
 
 The 5-minute interval, on average across all the days in the dataset which contains the maximum number of steps is 08:35.  
@@ -93,6 +113,12 @@ Note that there are a number of days/intervals where there are missing values (c
 
 ```r
 countNA <- sum(is.na(activityDF$steps))
+
+countNA
+```
+
+```
+## [1] 2304
 ```
 
 The number of rows with NA values is 2304.  
@@ -134,6 +160,20 @@ hist(stepsSumByDayReplaceNADF$x, breaks=20, col="red", xlab="total number of ste
 ```r
 stepsMeanReplaceNA <- mean(stepsSumByDayReplaceNADF$x)
 stepsMedianReplaceNA <- median(stepsSumByDayReplaceNADF$x)
+
+stepsMeanReplaceNA
+```
+
+```
+## [1] 10821
+```
+
+```r
+stepsMedianReplaceNA
+```
+
+```
+## [1] 11015
 ```
 
 With imputation, the mean total number of steps taken each day has increased from 10766.19 to 10821.21  
